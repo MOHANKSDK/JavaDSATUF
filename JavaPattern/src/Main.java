@@ -7,10 +7,10 @@ public class Main {
         Scanner sc=new Scanner(System.in);
         int count=sc.nextInt();
         Main m=new Main();
-//        System.out.println("Pattern 1");
-//        m.Pattern1(count);
-//        System.out.println("Pattern 2");
-//        m.Pattern2(count);
+        System.out.println("Pattern 1");
+        m.Pattern1(count);
+        System.out.println("Pattern 2");
+        m.Pattern2(count);
         System.out.println("Pattern 3");
         m.Pattern3(count);
     }
