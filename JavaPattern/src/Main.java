@@ -9,9 +9,10 @@ public class Main {
         Main m=new Main();
 //        System.out.println("Pattern 1");
 //        m.Pattern1(count);
-        System.out.println("Pattern 2");
-        m.Pattern2(count);
-
+//        System.out.println("Pattern 2");
+//        m.Pattern2(count);
+        System.out.println("Pattern 3");
+        m.Pattern3(count);
     }
 
     public void Pattern1(int count){
@@ -28,8 +29,8 @@ public class Main {
         //****
 
         System.out.println("Entered the Pattern1 method");
-        for(int i=0;i<4;i++){
-            for(int j=0;j<4;j++){
+        for(int i=0;i<count;i++){
+            for(int j=0;j<count;j++){
                 System.out.print("*");
             }
             System.out.println("");
@@ -46,6 +47,21 @@ public class Main {
         for(int i=0;i<count;i++){
             for(int j=0;j<=i;j++){
                 System.out.print("* ");
+            }
+            System.out.println("");
+        }
+    }
+
+    public void Pattern3(int count){
+        //1
+        //1 2
+        //1 2 3
+        //1 2 3 4
+        //1 2 3 4 5
+
+        for(int i=1;i<=count;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print(j+" ");
             }
             System.out.println("");
         }
