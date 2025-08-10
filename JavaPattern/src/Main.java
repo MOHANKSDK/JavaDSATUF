@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import static java.util.Collections.min;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
@@ -25,6 +27,28 @@ public class Main {
         m.pattern8(count);
         System.out.println("Pattern 9");
         m.pattern9(count);
+        System.out.println("Pattern 10");
+        m.pattern10(count);
+        System.out.println("Pattern 11");
+        m.pattern11(count);
+        System.out.println("Pattern 12");
+        m.pattern12(count);
+        System.out.println("Pattern 13");
+        m.pattern13(count);
+        System.out.println("Pattern 14");
+        m.pattern14(count);
+        System.out.println("Pattern 15");
+        m.pattern15(count);
+        System.out.println("Pattern 16");
+        m.pattern16(count);
+        System.out.println("Pattern 17");
+        m.pattern17(count);
+        System.out.println("Pattern 18");
+        m.pattern18(count);
+        System.out.println("Pattern 19");
+        m.pattern19(count);
+        System.out.println("Pattern 20");
+        m.pattern20(count);
     }
 
     public void pattern1(int count){
@@ -271,10 +295,257 @@ public class Main {
         }
 
     }
+    public void pattern10(int count){
+        //1             1
+        //1 2         2 1
+        //1 2 3     3 2 1
+        //1 2 3 4 4 3 2 1
+
+        for(int i=1;i<=count;i++){
+            //numbers
+            for(int j=1;j<=i;j++){
+                System.out.print(j);
+            }
+            //spaces
+            for(int j=1;j<=(2*count)-(2*i);j++){
+                System.out.print(" ");
+            }
+            //numbers
+            for(int j=i;j>=1;j--){
+                System.out.print(j);
+            }
+            System.out.println("");
+
+        }
+
+    }
+
+    public void pattern11(int count){
+        int num=1;
+        for(int i=1;i<=count;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print(num+ " ");
+                num=num+1;
+            }
+            System.out.println("");
+        }
+    }
+
+    public void pattern12(int count){
+//        A
+//        A B
+//        A B C
+//        A B C D
+//        A B C D E
+
+        for(int i=1;i<=count;i++){
+            for(char ch='A';ch<='A'+i-1;ch++){
+                System.out.print(ch+" ");
+            }
+            System.out.println("");
+        }
+    }
+
+    public void pattern13(int count){
+//        A B C D E
+//        A B C D
+//        A B C
+//        A B
+//        A
+        for(int i=count;i>=1;i--){
+            for(char ch='A';ch<='A'+i-1;ch++){
+                System.out.print(ch+" ");
+            }
+            System.out.println("");
+        }
+    }
+
+    public void pattern14(int count){
+        for(int i=1;i<=count;i++){
+            char ch=(char)('A'+i-1);
+            for(int j=1;j<=i;j++){
+                System.out.print(ch+" ");
+
+            }
+            System.out.println("");
+        }
+    }
+
+
+    public void pattern15(int count){
+//        A
+//       ABA
+//      ABCBA
+//     ABCDCBA
+//    ABCDEDCBA
+        for(int i=1;i<=count;i++){
+            //spaces
+            for(int j=1;j<=count-i;j++){
+                System.out.print(" ");
+            }
+            char ch='A';
+            //alphabets
+            for(int j=1;j<=2*i-1;j++){
+                System.out.print(ch);
+                if(j<=(2*i-1)/2){
+                    ch++;
+                }else {
+                    ch--;
+                }
+
+            }
+            //spaces
+            for(int j=1;j<=count-i;j++){
+                System.out.print(" ");
+            }
+            System.out.println("");
+        }
+    }
+
+    public void pattern16(int count){
+//        E
+//        D E
+//        C D E
+//        B C D E
+//        A B C D E
+        char ch=(char)('A'+count-1);
+      for(int i=1;i<=count;i++){
+          //alphabet
+          for(char j=(char)(ch-i+1);j<=ch;j++){
+              System.out.print(j+" ");
+          }
+          System.out.println("");
+      }
+
+    }
+    public void pattern17(int count){
+        for(int i=1;i<=count;i++){
+            //stars
+            for(int j=count;j>=i;j--){
+                System.out.print("*");
+            }
+            //spaces
+            for(int j=1;j<=2*i-2;j++){
+                System.out.print(" ");
+            }
+            //stars
+            for(int j=count;j>=i;j--){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+
+        for(int i=1;i<=count;i++){
+            //stars
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            //spaces
+            for(int j=1;j<=(2*count)-(2*i);j++){
+                System.out.print(" ");
+            }
+            //stars
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+
+
+    }
+
+    public void pattern18(int count){
+//    *        *
+//    **      **
+//    ***    ***
+//    ****  ****
+//    **********
+//    ****  ****
+//    ***    ***
+//    **      **
+//    *        *
+
+        for(int i=1;i<=count;i++){
+//            //stars
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+//            //spaces
+            for(int j=1;j<=(2*count)-(2*i);j++){
+                System.out.print(" ");
+            }
+//            //stars
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+
+        for (int i = count - 1; i >= 1; i--) {
+            // Left stars
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            // Spaces
+            for (int j = 1; j <= (2 * count) - (2 * i); j++) {
+                System.out.print(" ");
+            }
+            // Right stars
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    public void pattern19(int count){
+//        ****
+//        *  *
+//        *  *
+//        ****
+
+        for(int i=1;i<=count;i++){
+            for(int j=1;j<=count;j++){
+                if(i==1 || j==1 || i==count || j==count){
+                    System.out.print("*");
+                }
+                else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println("");
+        }
+    }
+
+    public void pattern20(int count){
+//        555555555
+//        544444445
+//        543333345
+//        543222345
+//        543212345
+//        543222345
+//        543333345
+//        544444445
+//        555555555
+
+        for(int i=1;i<=2*count-1;i++){
+            for(int j=1;j<=2*count-1;j++){
+                int top=i-1;
+                int left=j-1;
+                int bottom=2*count-i-1;
+                int right=2*count-j-1;
+                System.out.print(count-Math.min(Math.min(top,bottom),Math.min(left,right)));
+            }
+            System.out.println("");
+        }
+
+    }
 
 
 
 }
+
+
 
 
 
