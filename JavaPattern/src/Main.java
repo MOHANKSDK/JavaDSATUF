@@ -9,46 +9,48 @@ public class Main {
         Scanner sc=new Scanner(System.in);
         int count=sc.nextInt();
         Main m=new Main();
-        System.out.println("Pattern 1");
-        m.pattern1(count);
-        System.out.println("Pattern 2");
-        m.pattern2(count);
-        System.out.println("Pattern 3");
-        m.pattern3(count);
-        System.out.println("Pattern 4");
-        m.pattern4(count);
-        System.out.println("Pattern 5");
-        m.pattern5(count);
-        System.out.println("Pattern 6");
-        m.pattern6(count);
-        System.out.println("Pattern 7");
-        m.pattern7(count);
-        System.out.println("Pattern 8");
-        m.pattern8(count);
-        System.out.println("Pattern 9");
-        m.pattern9(count);
-        System.out.println("Pattern 10");
-        m.pattern10(count);
-        System.out.println("Pattern 11");
-        m.pattern11(count);
-        System.out.println("Pattern 12");
-        m.pattern12(count);
-        System.out.println("Pattern 13");
-        m.pattern13(count);
-        System.out.println("Pattern 14");
-        m.pattern14(count);
-        System.out.println("Pattern 15");
-        m.pattern15(count);
-        System.out.println("Pattern 16");
-        m.pattern16(count);
-        System.out.println("Pattern 17");
-        m.pattern17(count);
-        System.out.println("Pattern 18");
-        m.pattern18(count);
-        System.out.println("Pattern 19");
-        m.pattern19(count);
-        System.out.println("Pattern 20");
-        m.pattern20(count);
+//        System.out.println("Pattern 1");
+//        m.pattern1(count);
+//        System.out.println("Pattern 2");
+//        m.pattern2(count);
+//        System.out.println("Pattern 3");
+//        m.pattern3(count);
+//        System.out.println("Pattern 4");
+//        m.pattern4(count);
+//        System.out.println("Pattern 5");
+//        m.pattern5(count);
+//        System.out.println("Pattern 6");
+//        m.pattern6(count);
+//        System.out.println("Pattern 7");
+//        m.pattern7(count);
+//        System.out.println("Pattern 8");
+//        m.pattern8(count);
+//        System.out.println("Pattern 9");
+//        m.pattern9(count);
+//        System.out.println("Pattern 10");
+//        m.pattern10(count);
+//        System.out.println("Pattern 11");
+//        m.pattern11(count);
+//        System.out.println("Pattern 12");
+//        m.pattern12(count);
+//        System.out.println("Pattern 13");
+//        m.pattern13(count);
+//        System.out.println("Pattern 14");
+//        m.pattern14(count);
+//        System.out.println("Pattern 15");
+//        m.pattern15(count);
+//        System.out.println("Pattern 16");
+//        m.pattern16(count);
+//        System.out.println("Pattern 17");
+//        m.pattern17(count);
+//        System.out.println("Pattern 18");
+//        m.pattern18(count);
+//        System.out.println("Pattern 19");
+//        m.pattern19(count);
+//        System.out.println("Pattern 20");
+//        m.pattern20(count);
+        System.out.println("Pattern z");
+        m.patternZ(count);
     }
 
     public void pattern1(int count){
@@ -518,15 +520,15 @@ public class Main {
     }
 
     public void pattern20(int count){
-//        555555555
-//        544444445
-//        543333345
-//        543222345
-//        543212345
-//        543222345
-//        543333345
-//        544444445
-//        555555555
+//        5 5 5 5 5 5 5 5 5
+//        5 4 4 4 4 4 4 4 5
+//        5 4 3 3 3 3 3 4 5
+//        5 4 3 2 2 2 3 4 5
+//        5 4 3 2 1 2 3 4 5
+//        5 4 3 2 2 2 3 4 5
+//        5 4 3 3 3 3 3 4 5
+//        5 4 4 4 4 4 4 4 5
+//        5 5 5 5 5 5 5 5 5
 
         for(int i=1;i<=2*count-1;i++){
             for(int j=1;j<=2*count-1;j++){
@@ -534,11 +536,57 @@ public class Main {
                 int left=j-1;
                 int bottom=2*count-i-1;
                 int right=2*count-j-1;
-                System.out.print(count-Math.min(Math.min(top,bottom),Math.min(left,right)));
+                //System.out.print(count-Math.min(Math.min(top,bottom),Math.min(left,right)));
+                //OR
+                int minDist = top;
+                if (left < minDist) minDist = left;
+                if (bottom < minDist) minDist = bottom;
+                if (right < minDist) minDist = right;
+
+                System.out.print((count - minDist) + " ");
             }
             System.out.println("");
         }
 
+    }
+
+    public void patternZ(int count){
+//        for (int i = 0; i < count; i++) {
+//            for (int j = 0; j < count; j++) {
+//                // First row or last row
+//                if (i == 0 || i == count - 1) {
+//                    System.out.print("*");
+//                }
+//                // Diagonal (i + j == count - 1)
+//                else if (i + j == count - 1) {
+//                    System.out.print("*");
+//                }
+//                else {
+//                    System.out.print(" ");
+//                }
+//            }
+//            System.out.println();
+//        }
+
+        for(int i=0;i<count;i++){
+            if(i==0 || i==count-1){
+                for(int j=0;j<count;j++){
+                    System.out.print("*");
+                }
+            }
+            else{
+                int pos=count-1-i;
+                for(int j=0;j<count;j++){
+                    if(j==pos){
+                        System.out.print("*");
+                    }
+                    else {
+                        System.out.print(" ");
+                    }
+                }
+            }
+            System.out.println("");
+        }
     }
 
 
